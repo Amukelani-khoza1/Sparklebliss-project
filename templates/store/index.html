@@ -1,0 +1,78 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block title %}Home | Sparkle Bliss{% endblock %}
+
+{% block content %}
+
+<div class="header">
+    <h1>Welcome to Sparkle Bliss</h1>
+    <p class="slogan">Sparkling clean everytime ✨</p>
+</div>
+
+<section class="welcome">
+    <h2>Welcome Message</h2>
+    <p>
+        Sparkle Bliss is a leading 100% black women-owned cleaning company based in the beautiful Limpopo Province of South Africa.
+        We take pride in our innovative and eco-friendly cleaning solutions that have made a significant impact in the cleaning industry.
+        Our mission is to provide affordable cleaning services without compromising on quality, so that our clients can enjoy a sparkling clean environment.
+    </p>
+</section>
+
+<section class="products-preview">
+    <h2>Our Top Products</h2>
+    <div class="products-grid">
+        <div class="card">
+            <img src="{% static 'store/images/dishwash.jpg' %}" alt="Dishwashing Liquid">
+            <h3>Dishwashing Liquid</h3>
+            <p>750ml - R27 | 5L - R125 | 20L - R405</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'store/images/bleach.jpg' %}" alt="Thick Bleach">
+            <h3>Thick Bleach</h3>
+            <p>750ml - R25 | 5L - R110 | 20L - R340</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'store/images/pine_gel.jpg' %}" alt="Pine Gel">
+            <h3>Pine Gel</h3>
+            <p>750ml - R25 | 5L - R110 | 20L - R340</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'store/images/cleaner.jpg' %}" alt="All Purpose Cleaner">
+            <h3>All Purpose Cleaner</h3>
+            <p>750ml - R30 | 5L - R140 | 20L - R405</p>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <h2>About Us</h2>
+    <p>
+        Founded in 2021 by <strong>Poppy Khoza</strong>, Sparkle Bliss has made its mark in the cleaning industry with eco-friendly and affordable cleaning solutions.
+        Our dedicated team continuously researches to ensure our products meet the highest industry standards and customer needs.
+        We aim to be the go-to brand for cleaning chemicals and equipment, providing cost-effective solutions that reduce harm to the environment.
+    </p>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <blockquote>"Sparkle Bliss products leave my dishes shining every time!" – Thandi M.</blockquote>
+    <blockquote>"Affordable, effective, and smells great!" – Lethabo N.</blockquote>
+    <blockquote>"Best detergent supplier in Limpopo!" – John M.</blockquote>
+</section>
+
+<section class="contact-form">
+    <h2>Leave Us a Message</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <textarea name="message" placeholder="Your message..." rows="5" required></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

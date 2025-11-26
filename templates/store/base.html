@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Sparkle Bliss{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+<body>
+
+    <!-- 🌈 NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <img src="{% static 'store/images/logo.jpg' %}" alt="Sparkle Bliss Logo">
+            <span class="brand-name">Sparkle Bliss</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'store:index' %}">Home</a></li>
+            <li><a href="{% url 'store:products' %}">Products</a></li>
+            <li><a href="{% url 'store:combos' %}">Combos</a></li>
+            <li><a href="{% url 'store:contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="page-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- 🌟 FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+
+            <div>
+                <h3>Sparkle Bliss</h3>
+                <p>Affordable eco-friendly cleaning chemicals made with care.</p>
+            </div>
+
+            <div>
+                <h4>Contact Info</h4>
+                <p>📞 078 475 0218</p>
+                <p>✉️ info@sparklebliss.co.za</p>
+                <p>📍 Nkowankowa, Limpopo</p>
+            </div>
+
+            <div>
+                <h4>Operating Hours</h4>
+                <p>Mon–Fri: 8am–4pm</p>
+                <p>Free delivery around Nkowankowa</p>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 Sparkle Bliss • All Rights Reserved
+        </p>
+    </footer>
+
+</body>
+</html>
