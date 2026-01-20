@@ -1,6 +1,67 @@
-<h1>Get in touch with us today...</h1>
-<p>Address: House 1215A, Hitsakile street, Letaba 0870</p>
-<p>Phone: 078 475 0218</p>
-<p>Email: info@sparklebliss.co.za</p>
-<p>Delivery: Free around Nkowankowa</p>
-<a href="{% url 'store:index' %}">Back to Home</a>
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}Contact Us | Sparkle Bliss{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+
+    <div class="header">
+        <h1>Get in Touch</h1>
+        <p class="slogan">We’d love to hear from you ✨</p>
+    </div>
+
+    <div class="products-grid">
+
+        <!-- CONTACT INFO + MAP -->
+        <div class="card">
+            <h3>Contact Information</h3>
+            <p><strong>📍 Address:</strong><br>
+                House 1215A, Hitsakile Street<br>
+                Nkowankowa, Limpopo 0870
+            </p>
+
+            <p><strong>📞 Phone:</strong><br>
+                078 475 0218
+            </p>
+
+            <p><strong>✉️ Email:</strong><br>
+                info@sparklebliss.co.za
+            </p>
+
+            <p><strong>🚚 Delivery:</strong><br>
+                Free delivery around Nkowankowa
+            </p>
+
+            <p><strong>⏰ Hours:</strong><br>
+                Mon–Fri: 8am – 4pm
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Our Location</h3>
+            <iframe
+                src="https://www.google.com/maps?q=Nkowankowa%20Limpopo&output=embed"
+                width="100%" 
+                height="220" 
+                style="border:0; border-radius: 12px; margin-top: 15px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="card">
+            <h3>Send Us a Message</h3>
+
+            <form method="post" class="contact-form">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

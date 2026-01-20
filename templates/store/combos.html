@@ -1,8 +1,63 @@
 {% extends "store/base.html" %}
+{% load static %}
 {% block title %}Combo Deals | Sparkle Bliss{% endblock %}
+
 {% block content %}
-<h1>Combo Deals</h1>
-<p>Save more with our detergent combos!</p>
-<p>Special discounts for bulk buyers (15 or more items for resale).</p>
-<a href="{% url 'store:index' %}" class="btn">Back to Home</a>
+
+<div class="header">
+    <h1>Combo Deals</h1>
+    <p class="slogan">Save more when you buy in bulk ✨</p>
+</div>
+
+<section class="products-preview">
+
+    <div class="products-grid">
+
+        <!-- Combo 1 -->
+        <div class="card">
+            <img src="{% static 'store/images/combo1.jpg' %}" alt="Starter Combo">
+            <h3>Starter Cleaning Combo</h3>
+            <p>✔ Dishwashing Liquid (5L)</p>
+            <p>✔ Thick Bleach (5L)</p>
+            <p>✔ Pine Gel (5L)</p>
+            <p><strong>Price: R320.00</strong></p>
+        </div>
+
+        <!-- Combo 2 -->
+        <div class="card">
+            <img src="{% static 'store/images/combo2.jpg' %}" alt="Family Combo">
+            <h3>Family Cleaning Combo</h3>
+            <p>✔ Dishwashing Liquid (20L)</p>
+            <p>✔ Thick Bleach (20L)</p>
+            <p>✔ All Purpose Cleaner (20L)</p>
+            <p><strong>Price: R1,050.00</strong></p>
+        </div>
+
+        <!-- Combo 3 -->
+        <div class="card">
+            <img src="{% static 'store/images/combo3.jpg' %}" alt="Reseller Combo">
+            <h3>Reseller Combo</h3>
+            <p>✔ 15+ Mixed Cleaning Products</p>
+            <p>✔ Discounted Bulk Pricing</p>
+            <p>✔ Ideal for Small Businesses</p>
+            <p><strong>Contact us for pricing</strong></p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact-form">
+    <h2>Interested in a Combo Deal?</h2>
+    <p>Leave us a message or WhatsApp us for fast assistance.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Which combo are you interested in?" required></textarea>
+        <button type="submit">Send Enquiry</button>
+    </form>
+</section>
+
 {% endblock %}

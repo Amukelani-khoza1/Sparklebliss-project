@@ -1,7 +1,66 @@
 {% extends "store/base.html" %}
+{% load static %}
 {% block title %}Products | Sparkle Bliss{% endblock %}
+
 {% block content %}
-<h1>Our Products</h1>
-<p>Dishwashing liquid, bleach, pine gel, cream cleaner, and more!</p>
-<a href="{% url 'store:index' %}" class="btn">Back to Home</a>
+
+<div class="header">
+    <h1>Our Products</h1>
+    <p class="slogan">Quality cleaning solutions at affordable prices ✨</p>
+</div>
+
+<section class="products-preview">
+
+    <div class="products-grid">
+
+        <!-- Dishwashing Liquid -->
+        <div class="card">
+            <img src="{% static 'store/images/dishwash.jpg' %}" alt="Dishwashing Liquid">
+            <h3>Dishwashing Liquid</h3>
+            <p>750ml – R27.00</p>
+            <p>5L – R125.00</p>
+            <p>20L – R405.00</p>
+        </div>
+
+        <!-- Thick Bleach -->
+        <div class="card">
+            <img src="{% static 'store/images/bleach.jpg' %}" alt="Thick Bleach">
+            <h3>Thick Bleach</h3>
+            <p>750ml – R25.00</p>
+            <p>5L – R110.00</p>
+            <p>20L – R340.00</p>
+        </div>
+
+        <!-- All Purpose Cleaner -->
+        <div class="card">
+            <img src="{% static 'store/images/purpose_cleaner.jpg' %}" alt="All Purpose Cleaner">
+            <h3>All Purpose Cleaner</h3>
+            <p>750ml – R30.00</p>
+            <p>5L – R140.00</p>
+            <p>20L – R405.00</p>
+        </div>
+
+        <!-- Cream Cleaner -->
+        <div class="card">
+            <img src="{% static 'store/images/cream.jpg' %}" alt="Cream Cleaner">
+            <h3>Cream Cleaner</h3>
+            <p>750ml – R25.00</p>
+            <p>5L – R100.00</p>
+            <p>20L – R300.00</p>
+        </div>
+
+        <!-- Pine Gel -->
+        <div class="card">
+            <img src="{% static 'store/images/pine_gel.jpg' %}" alt="Pine Gel">
+            <h3>Econo Pine Gel</h3>
+            <p>500ml – R25.00</p>
+            <p>1L – R45.00</p>
+            <p>5L – R150.00</p>
+            <p>20L – R400.00</p>
+        </div>
+
+    </div>
+
+</section>
+
 {% endblock %}
